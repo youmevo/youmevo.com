@@ -4,9 +4,7 @@ Site vitrine personnel déployé sur Vercel.
 
 ## 📋 Description
 
-Ce dépôt contient le code source du site vitrine **youmevo.com**, un site web moderne conçu pour présenter mes projets, compétences et expériences professionnelles.
-
-## 🚀 Déploiement
+Ce dépôt contient le code source du site vitrine **youmevo.com**.
 
 Le site est automatiquement déployé sur [Vercel](https://vercel.com) à chaque push sur la branche principale.
 
