@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <>
@@ -9,6 +11,13 @@ export default function Home() {
 
       {/* Overlay content */}
       <div className="overlay">
+        {/* Top Navigation */}
+        <nav className="top-nav">
+          <Link href="/login" className="connect-btn">
+            Se connecter
+          </Link>
+        </nav>
+
         {/* Main Content (Middle Left) */}
         <main className="hero-section">
           <h1>
