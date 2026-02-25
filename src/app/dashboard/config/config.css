@@ -1,0 +1,125 @@
+.config-main {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.config-main h1 {
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), var(--neon-violet), var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 32px;
+}
+
+.config-card {
+  background: rgba(10, 10, 30, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(188, 19, 254, 0.12);
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 0 40px rgba(188, 19, 254, 0.04), 0 0 20px rgba(15, 240, 252, 0.02);
+}
+
+.config-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.config-item + .config-item {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.config-label {
+  flex: 1;
+}
+
+.config-label h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.config-label p {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Toggle switch */
+.toggle-switch {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: linear-gradient(135deg, var(--neon-violet), var(--neon-blue));
+  border-color: rgba(188, 19, 254, 0.3);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(24px);
+  background: #fff;
+}
+
+.toggle-switch input:disabled + .toggle-slider {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .config-main {
+    padding: 20px;
+  }
+
+  .config-main h1 {
+    font-size: 1.2rem;
+  }
+
+  .config-card {
+    padding: 20px;
+  }
+}

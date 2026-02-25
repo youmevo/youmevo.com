@@ -41,7 +41,7 @@ export default function Home() {
               data-text="moment"
               style={{ "--i": 3 } as React.CSSProperties}
             >
-              moment
+              moments
             </span>
             <span
               className="glitch-text"
