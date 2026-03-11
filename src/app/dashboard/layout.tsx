@@ -84,13 +84,27 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             >
               Campagnes
             </Link>
+            <Link
+              href="/dashboard/concours"
+              className={`nav-link ${pathname?.startsWith('/dashboard/concours') ? 'nav-link-active' : ''}`}
+            >
+              Concours
+            </Link>
             {user.role === 'admin' && (
-              <Link
-                href="/dashboard/config"
-                className={`nav-link ${pathname === '/dashboard/config' ? 'nav-link-active' : ''}`}
-              >
-                Config
-              </Link>
+              <>
+                <Link
+                  href="/dashboard/notifications/templates"
+                  className={`nav-link ${pathname === '/dashboard/notifications/templates' ? 'nav-link-active' : ''}`}
+                >
+                  Templates Notifications
+                </Link>
+                <Link
+                  href="/dashboard/config"
+                  className={`nav-link ${pathname === '/dashboard/config' ? 'nav-link-active' : ''}`}
+                >
+                  Config
+                </Link>
+              </>
             )}
           </div>
         </div>
