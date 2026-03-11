@@ -78,6 +78,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             >
               Inviter des membres
             </Link>
+            <Link
+              href="/dashboard/campagnes"
+              className={`nav-link ${pathname === '/dashboard/campagnes' ? 'nav-link-active' : ''}`}
+            >
+              Campagnes
+            </Link>
             {user.role === 'admin' && (
               <Link
                 href="/dashboard/config"
