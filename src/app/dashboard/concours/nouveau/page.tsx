@@ -61,14 +61,13 @@ export default function NouveauConcoursPage() {
         title: title.trim(),
         maxParticipants,
         maxLikesPerUser,
-        maturityDate: new Date(maturityDate).toISOString(),
-        voteEndDate: new Date(voteEndDate).toISOString(),
+        maturityAt: new Date(maturityDate).toISOString(),
+        voteEndAt: new Date(voteEndDate).toISOString(),
       };
 
       if (description.trim()) body.description = description.trim();
       if (reward.trim()) body.reward = reward.trim();
-      if (publishDate) body.publishDate = new Date(publishDate).toISOString();
-      if (videoFile) body.hasIntroVideo = true;
+      if (publishDate) body.publishAt = new Date(publishDate).toISOString();
 
       const res = await fetch('/api/contests', {
         method: 'POST',

@@ -14,9 +14,9 @@ interface Contest {
   maxParticipants: number;
   maxLikesPerUser: number;
   participantsCount: number;
-  publishDate: string | null;
-  maturityDate: string;
-  voteEndDate: string;
+  publishAt: string | null;
+  maturityAt: string;
+  voteEndAt: string;
   introVideoId: string | null;
   introVideoUrl: string | null;
   winnerId: string | null;
@@ -73,9 +73,9 @@ export default function ContestDetailPage() {
       setEditReward(data.reward ?? '');
       setEditMaxParticipants(data.maxParticipants);
       setEditMaxLikes(data.maxLikesPerUser);
-      setEditPublishDate(toLocalDatetime(data.publishDate));
-      setEditMaturityDate(toLocalDatetime(data.maturityDate));
-      setEditVoteEndDate(toLocalDatetime(data.voteEndDate));
+      setEditPublishDate(toLocalDatetime(data.publishAt));
+      setEditMaturityDate(toLocalDatetime(data.maturityAt));
+      setEditVoteEndDate(toLocalDatetime(data.voteEndAt));
     } catch {
       setError('Erreur de chargement');
     } finally {
@@ -100,10 +100,10 @@ export default function ContestDetailPage() {
         reward: editReward.trim() || null,
         maxParticipants: editMaxParticipants,
         maxLikesPerUser: editMaxLikes,
-        maturityDate: new Date(editMaturityDate).toISOString(),
-        voteEndDate: new Date(editVoteEndDate).toISOString(),
+        maturityAt: new Date(editMaturityDate).toISOString(),
+        voteEndAt: new Date(editVoteEndDate).toISOString(),
       };
-      if (editPublishDate) body.publishDate = new Date(editPublishDate).toISOString();
+      if (editPublishDate) body.publishAt = new Date(editPublishDate).toISOString();
 
       const res = await fetch(`/api/contests/${id}`, {
         method: 'PATCH',
@@ -191,16 +191,16 @@ export default function ContestDetailPage() {
           </div>
           <div className="detail-info-item">
             <span className="detail-info-label">Date maturité</span>
-            <span className="detail-info-value">{formatDate(contest.maturityDate)}</span>
+            <span className="detail-info-value">{formatDate(contest.maturityAt)}</span>
           </div>
           <div className="detail-info-item">
             <span className="detail-info-label">Fin des votes</span>
-            <span className="detail-info-value">{formatDate(contest.voteEndDate)}</span>
+            <span className="detail-info-value">{formatDate(contest.voteEndAt)}</span>
           </div>
-          {contest.publishDate && (
+          {contest.publishAt && (
             <div className="detail-info-item">
               <span className="detail-info-label">Publication</span>
-              <span className="detail-info-value">{formatDate(contest.publishDate)}</span>
+              <span className="detail-info-value">{formatDate(contest.publishAt)}</span>
             </div>
           )}
           {contest.reward && (
