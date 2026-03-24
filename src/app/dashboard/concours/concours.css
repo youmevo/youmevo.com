@@ -1,0 +1,197 @@
+/* ===== Concours List Page ===== */
+
+.concours-main {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.concours-header {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.concours-header h1 {
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), var(--neon-violet), var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0;
+}
+
+.new-contest-btn {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, var(--neon-violet), var(--neon-blue));
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: var(--font-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: opacity 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 20px rgba(188, 19, 254, 0.2), 0 0 10px rgba(15, 240, 252, 0.1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.new-contest-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 30px rgba(188, 19, 254, 0.4), 0 0 20px rgba(15, 240, 252, 0.2);
+}
+
+/* Filter bar */
+.concours-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.filter-btn-active {
+  background: linear-gradient(135deg, var(--neon-violet), var(--neon-blue));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 12px rgba(188, 19, 254, 0.3);
+}
+
+/* Table */
+.concours-table-wrapper {
+  background: rgba(10, 10, 30, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(188, 19, 254, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(188, 19, 254, 0.04), 0 0 20px rgba(15, 240, 252, 0.02);
+}
+
+.concours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-secondary);
+}
+
+.concours-table th {
+  text-align: left;
+  padding: 14px 20px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.concours-table td {
+  padding: 14px 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.concours-row {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.concours-row:hover {
+  background: rgba(188, 19, 254, 0.04);
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-DRAFT {
+  background: rgba(160, 160, 160, 0.1);
+  color: #a0a0a0;
+  border: 1px solid rgba(160, 160, 160, 0.2);
+}
+
+.status-OPEN {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.status-VOTING {
+  background: rgba(15, 240, 252, 0.1);
+  color: var(--neon-blue);
+  border: 1px solid rgba(15, 240, 252, 0.2);
+}
+
+.status-COMPLETED {
+  background: rgba(188, 19, 254, 0.1);
+  color: var(--neon-violet);
+  border: 1px solid rgba(188, 19, 254, 0.2);
+}
+
+.status-CANCELLED {
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.empty-cell {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3) !important;
+  padding: 40px 20px !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .concours-main {
+    padding: 20px;
+  }
+
+  .concours-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .concours-table th,
+  .concours-table td {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+
+  .concours-header {
+    flex-direction: column;
+  }
+}

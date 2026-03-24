@@ -19,7 +19,7 @@ body,
 html {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: var(--font-secondary);
   background-color: var(--dark-bg);
   color: var(--text-color);
